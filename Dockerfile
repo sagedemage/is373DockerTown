@@ -7,5 +7,6 @@ ENV QR_CODE_DEFAULT_FILE_NAME='default.png'
 WORKDIR /home/myuser
 COPY --chown=myuser:myuser . .
 RUN pip install -r requirements.txt
-ENTRYPOINT ["python","./main.py"]
+RUN chmod +x script.sh
+ENTRYPOINT ["bash", "script.sh"]
 
